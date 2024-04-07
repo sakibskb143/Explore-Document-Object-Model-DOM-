@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Even Listener</title>
+</head>
+<body>
+    <main>
+        <h1>Final DOM Event Handlers.</h1>
+        <p id="input-text-display">Display Input name Here</p>
+        <input id="inputfield" type="text">
+        <button id="btn-update">Update</button>
+
+        <br>
+        <h3 id="handle-status">Default Test</h3>
+        <button onclick="handleOnlick()">Handle Event by Onclick function</button>
+        <button id="event-listener">Handle Event by addEventListener</button>
+
+    </main>
+    <script>
+       // Option 1 :
+        function handleOnlick (){
+            const handleStatus = document.getElementById('handle-status');
+            handleStatus.innerText = 'Handleed by function attached on Onclick attribute.';
+
+        }
+        //option 2 :
+        document.getElementById('event-listener').addEventListener('click',function handleAddeventListener(){
+            document.getElementById('handle-status').innerText = 'Text Updated by add event listener.';
+        })
+
+        // option 2 :
+      
+
+        document.getElementById('btn-update').addEventListener('click',function updateBtn(){
+           const input_field = document.getElementById('inputfield');
+           const input_text = input_field.value;
+             // use value for read input from input field
+
+          const p = document.getElementById('input-text-display');
+          p.innerText = input_text ;
+           input_field.value=' ';
+           
+
+        })
+
+
+    </script>
+</body>
+</html>
